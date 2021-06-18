@@ -12,11 +12,10 @@ int main(void)
 	{
 		putchar(e + '0');
 	}
-	char i;
 	/* print small letters alphabets a-f */
-	for (i = 'a'; i <= 'f'; i++)
+	for (e = 97; e <= 102; e++)
 	{
-		putchar(i);
+		putchar(e);
 	}
 	putchar('\n');
 	return (0);
