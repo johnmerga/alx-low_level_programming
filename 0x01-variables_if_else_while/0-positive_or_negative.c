@@ -8,24 +8,23 @@
  */
 int main(void)
 {
-int n;
+	int n;
 
-srand(time(0));
-n = rand() - RAND_MAX / 2;
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
 
-/* check the boolean condition */
-if (n > 0)
-{
-printf("Value of a is positive\n%d\n", n);
+	/* check the boolean condition */
+	if (n > 0)
+	{
+		printf("%d is positive\n", n);
+	}
+	else if (n < 0)
+	{
+		printf("%d is negative\n", n);
+	}
+	else
+	{
+		printf("%d is zero\n", n);
+	}
+	return (0);
 }
-else if (n < 0)
-{
-printf("Value of a is negative\n %d \n", n);
-}
-else
-{
-printf("it's neutral \n%d\n", n);
-}
-return (0);
-}
-
