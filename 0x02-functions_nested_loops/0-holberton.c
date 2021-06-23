@@ -7,6 +7,7 @@
 int main(void)
 {
 	char *salut = "Holberton";
+	/** looping the word **/
 	while (*salut)
 	{
 		_putchar(*salut);
