@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * _isdigit - checks if the character is upperCase
  * @c: input value
