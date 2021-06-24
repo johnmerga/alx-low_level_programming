@@ -1,8 +1,7 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef _HOLBERTON_H_
+#define _HOLBERTON_H_
 
-#include <stdio.h>
+int _isupper(int c);
+int _putchar(char);
 
-int _isdigit(int c);
-
-#endif /* HOLBERTON_H */
+#endif
