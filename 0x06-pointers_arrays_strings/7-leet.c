@@ -1,14 +1,14 @@
 #include "holberton.h"
-
 /**
- * leet -  a function that encodes a string into 1337.
- * @s: - input pointer.
- * Return: s.
-*/
+ * leet - encodes a string into 1337
+ * @s: input string.
+ * Return: the pointer to dest.
+ */
 
 char *leet(char *s)
 {
 	int count = 0, i;
+	int low_letters[] = {97, 101, 111, 116, 108};
 	int upp_letters[] = {65, 69, 79, 84, 76};
 	int numbers[] = {52, 51, 48, 55, 49};
 
@@ -16,7 +16,7 @@ char *leet(char *s)
 	{
 		for (i = 0; i < 5; i++)
 		{
-			if (*(s + count) == upp_letters[i] || *(s + count) == upp_letters[i] + 32)
+			if (*(s + count) == low_letters[i] || *(s + count) == upp_letters[i])
 			{
 				*(s + count) = numbers[i];
 				break;
