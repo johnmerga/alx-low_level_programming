@@ -1,52 +1,58 @@
 #include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
-
 /**
- * argstostr - concatenates all the arguments of a program.
- * @ac: argument count.
- * @av: argument vector.
- *
- * Return: pointer of an array of char
- */
+ * _strlen - returns the length of the string
+ * @s: input string to count
+ * Description: returns the length of a given string
+ * Return: length of string as int
+ **/
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
+	return (i + 1);
+}
+/**
+ * argstostr - concatenates all arguments of program
+ * @ac: number of arguments
+ * @av: arguments, pointer to strings
+ * Description: concatenate all args to one string, separated by \n
+ * Return: pointer to string, NULL if fails
+ **/
 char *argstostr(int ac, char **av)
 {
-	char *aout;
-	int c, i, j, ia;
+	char *dest;
+	unsigned int size, i, j, k;
 
-	if (ac == 0)
+	size = 0;
+	k = 0;
+
+	if (ac <= 0 || av == NULL)
 		return (NULL);
 
-	for (c = i = 0; i < ac; i++)
+	for (i = 0; i < (unsigned int)ac; i++)
 	{
-		if (av[i] == NULL)
-			return (NULL);
+		size += _strlen(av[i]);
+	}
 
+	dest = (char *)malloc((size + 1) * sizeof(char));
+
+	if (dest == NULL)
+		return (NULL);
+
+	for (i = 0; i < (unsigned int)ac; i++)
+	{
 		for (j = 0; av[i][j] != '\0'; j++)
-			c++;
-		c++;
-	}
-
-	aout = malloc((c + 1) * sizeof(char));
-
-	if (aout == NULL)
-	{
-		free(aout);
-		return (NULL);
-	}
-
-	for (i = j = ia = 0; ia < c; j++, ia++)
-	{
-		if (av[i][j] == '\0')
 		{
-			aout[ia] = '\n';
-			i++;
-			ia++;
-			j = 0;
+			dest[k] = av[i][j];
+			k++;
 		}
-		if (ia < c - 1)
-			aout[ia] = av[i][j];
+		dest[k] = '\n';
+		k++;
 	}
-	aout[ia] = '\0';
-
-	return (aout);
+	dest[k] = '\0';
+	return (dest);
 }
