@@ -1,33 +1,54 @@
-
-#include <stdlib.h>
 #include "holberton.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * string_nconcat - appends n chars from s2 to s1 in a new string
- * @s1: base string
- * @s2: src string
- * @n: number of chars to append to s1
- *
- * Return: a new string
- */
+ * _strlen - returns the length of the string
+ * @s: input string to count
+ * Description: returns the length of a given string
+ * Return: length of string as int
+ **/
+int _strlen(char *s)
+{
+	unsigned int i;
+
+	if (s == NULL)
+		return (1);
+	for (i = 0; s[i] != '\0'; i++)
+		;
+	return (i + 1);
+}
+/**
+ * string_nconcat - concatenate n chars of second string to first
+ * @s1: first string
+ * @s2: second string
+ * @n: number of chars to concatenate
+ * Description: concatenate two strings, return NULL if fails
+ * Return: pointer to string, NULL if fails
+ **/
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *str, *str_tmp;
-	unsigned int i = 0, len_1 = 0, len_2 = 0;
+	char *dest;
+	unsigned int size1, size2, i, j;
 
-	s1 = s1 == NULL ? "" : s1, s2 = s2 == NULL ? "" : s2;
-	for (; s1[len_1]; ++len_1)
-		continue;
-	for (; s2[len_2] && len_2 < n; ++len_2)
-		continue;
+	size1 = _strlen(s1);
+	size2 = _strlen(s2);
+	if (n > size2 - 1)
+		n = size2 - 1;
 
-	str = malloc(sizeof(char) * (len_1 + len_2 + 1)), str_tmp = str;
-	if (str == NULL)
+	dest = (char *)malloc((size1 + n) * sizeof(char));
+	if (dest == NULL)
 		return (NULL);
-	while (*s1)
-		*str++ = *s1++;
-	for (; i < len_2; i++)
-		*str++ = *s2++;
-	*str = '\0';
-	return (str_tmp);
+	if (size1 == 1 && size2 == 1)
+		return (NULL);
+
+	for (i = 0; i < size1 - 1; i++)
+		dest[i] = s1[i];
+
+	for (j = 0; j <= n; j++)
+	{
+		dest[i + j] = s2[j];
+	}
+	dest[i + j] = '\0';
+
+	return (dest);
 }
