@@ -3,8 +3,7 @@
 An introductory project on:
 - `calloc`, `realloc`, and `exit`
 ## Requirements
-- Ubuntu 14.04
-- gcc 4.8.4
+- Ubuntu 20.04
 ## File Descriptions
 ### Mandatory
 **[0-malloc_checked.c](0-malloc_checked.c)** - function that allocates memory using `malloc`.
