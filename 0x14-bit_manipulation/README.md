@@ -1,16 +1,26 @@
-#C PROGRAMMING
-Low-level programming & Algorithm
-0x00. C - Hello, World
-0x01. C - Variables, if, else, while
-0x02. C - Functions, nested loops
-0x03. C - Debugging
-0x04. C - More functions, more nested loops
-0x05. C - Pointers, arrays and strings
-0x06. C - More pointers, arrays and strings
-0x07. C - Even more pointers, arrays and strings
-0x09. C - Static libraries
-0x08. C - Recursion
-0x0A. C - argc, argv
-0x0B. C - malloc, free
-0x0C. C -  More malloc, free
+# 0x13. C - Bit manipulation
+## About
+An introductory project on:
+- Bit manipulation
+- Bitwise operators
+## Requirements
+- Ubuntu 20.04
+- gcc 4.8.4
+## File Descriptions
+### Mandatory
+**[0-binary_to_uint.c](0-binary_to_uint.c)** - function that converts a binary number to an `unsigned int`.
 
+**[1-print_binary.c](1-print_binary.c)** - function that prints the binary representation of a number.
+
+**[2-get_bit.c](2-get_bit.c)** - function that returns the value of a bit at a given index.
+
+**[3-set_bit.c](3-set_bit.c)** - function that sets the value of a bit to `1` at a given index.
+
+**[4-clear_bit.c](4-clear_bit.c)** - function that sets the value of a bit to `0` at a given index.
+
+**[5-flip_bits.c](5-flip_bits.c)** - function that returns the number of bits you would need to flip to get from one number to another.
+
+### Advanced
+**[100-get_endianness.c](100-get_endianness.c)** - function that checks the endianness.
+
+**[101-password](101-password)** - finds the password for [this program](https://github.com/holbertonschool/0x13.c) and saves it in a file.
